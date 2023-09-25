@@ -1,7 +1,7 @@
 /* ---------------------------------------- Class ---------------------------- */
 
 .nb-background-color {          /* navbar background color */
-    background-color: #023E8A;
+    background-color: #46295a;
 }
 
 .nbMenuItem {                   /* navbar link text properties */
@@ -11,15 +11,15 @@
 }
 
 .footer{
-    background-color: #023E8A; /* footer background */
+    background-color: #46295a; /* footer background */
 }
 
 .showcase{
-    background-color: #8fa3ab;
+    background-color: #6b547b;
 }
 
 .overview{
-    background-color: #dbe3e7;
+    background-color: #907f9c;
 }
 
 .ovPadLeft{
@@ -35,11 +35,11 @@
 }
 
 .authors{
-    background-color: #dbe3e7;
+    background-color: #907f9c;
 }
 
 .about-team{
-    color: rgb(82, 81, 81);
+    color: #000000;
 }
 
 .about{
@@ -48,12 +48,16 @@
 }
 
 .procedure{
-    background-color: #dbe3e7;
+    background-color: #907f9c;
     padding: 50px;
 }
 
 .howTo{
     font-size: 20px;
+}
+
+.table{
+    background-color: 	#b5a9bd;
 }
 
 
@@ -74,7 +78,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #eae6e6;
+    background-color: 	#b5a9bd;
     /*transform-origin: bottom right;*/
     transition: transform 0.35s ease-out;
 }

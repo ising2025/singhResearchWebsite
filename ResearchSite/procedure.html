@@ -46,7 +46,6 @@
         </div>
     </nav>
 
-    <!-- How to use the sensor -->
     <section class="procedure">
         <div class="container">
             <br>
@@ -60,29 +59,53 @@
         <table class="table table-hover table-borderless">
             <tbody>
                 <tr>
-                    <th scope="row"><h2>Step 1</h2></th>
-                    <td><p class="howTo">Start Python Flask server</p></td>
-                    <td class="text-center"><img src="images/pythonLogo.png" alt="Python Logo"></td>
+                    <th scope="row"><h2>Step 1: Setup</h2></th>
+                    <td><p class="howTo">To set up the experiment, the power drill was used to cut a hole with a 1.5” diameter 
+                        on one of the bigger sides of the tank, 2” above the bottom, and in the middle of each left and right 
+                        edge. The meter was fitted in at the hole at the male NH Thread end, and secured with Gorilla Tape and 
+                        Waterproof Tape on both sides. 33” of piping was put on the other end of the meter, and secured with the 
+                        waterproof tape given with the flow meter.</p></td>
+                    <td class="text-center"><img src="images/IMG_ADB88009649B-1.jpeg" alt="Tank Setup" width="130" height="150"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><h2>Step 2</h2></th>
-                    <td><p class="howTo">Power circuit on. SR-04/05 transmits data to Nano IoT</p></td>
-                    <td class="text-center"><img src="images/rangeFinderTP.png" alt="SR04 Tange Finder"></td>
+                    <th scope="row"><h2>Step 2: Make Solution</h2></th>
+                    <td><p class="howTo">To perform a trial for the experiment, 4 gallons of solution were needed in total. 
+                        If the desired pH level was 7, 4 gallons of purified water was poured into the tank, and no acid or 
+                        base was poured in. If the desired pH level was 4, 0.5 gallons of acetic acid and 3.5 gallons of distilled 
+                        water were poured in. If the desired pH level was 2, 1 gallon of acetic acid and 3 gallons of distilled water 
+                        were poured in. If the desired pH level was 8, ½ cup of sodium bicarbonate was added to 4 gallons of water. 
+                        If the desired pH level was 10, 0.5 gallons of sodium hydrochloride and 3.5 gallons of distilled water were 
+                        poured in. If the desired pH level was 12, 1 gallon of sodium hydrochloride and 3 gallons of distilled water were 
+                        poured in. The water was checked with a pH tester and seen if it was the desired pH (either 1, 4, 7, 8, 10, or 12).</p></td>
+                    <td class="text-center"><img src="images/Without Aluminm Before.jpeg" alt="Solution for Trial" width="130" height="150"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><h2>Step 3</h2></th>
-                    <td><p class="howTo">Nano IoT connects to PC via Wi-Fi and sends data to Arduino program.</p></td>
-                    <td class="text-center"><img src="images/nano33IoT3.png" alt="Nano 33 IoT"></td>
+                    <th scope="row"><h2>Step 3: Make Aluminum Balls</h2></th>
+                    <td><p class="howTo">Once the desired pH is reached, a 1’x18” sheet of aluminum was cut up into 4”x6.5” 
+                        squares, rolled up, and put into the water as well.</p></td>
+                    <td class="text-center"><img src="images/IMG_00CD86169BE5-1.jpeg" alt="Aluminum Balls" width="130" height="150"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><h2>Step 4</h2></th>
-                    <td><p class="howTo">Arduino and Flask server communicate via HTTP request protocol</p></td>
-                    <td class="text-center"><img src="images/arduinoLogo.png" alt="Arduino Logo"></td>
+                    <th scope="row"><h2>Step 4: Let Solution Sit</h2></th>
+                    <td><p class="howTo">The tanks sat in a dark room for exactly 48 hours, away from any light or other factors.</p></td>
+                    <td class="text-center"><img src="images/IMG_E1EA62E06302-1.jpeg" alt="Solution Sitting"width="130" height="150"></td>
                 </tr>
                 <tr>
-                    <th scope="row"><h2>Step 5</h2></th>
-                    <td><p class="howTo">Flask connects to Firebase and sends data for storage</p></td>
-                    <td class="text-center"><img src="images/firebaseLogo.png" alt="Firebase Logo"></td>
+                    <th scope="row"><h2>Step 5: Flow Rate Testing</h2></th>
+                    <td><p class="howTo">After 48 hours, another storage unit was taken and placed under the tank. The water 
+                        was poured into the tank, drained out of the tank through the piping and the flow meter, and out the 
+                        end into a drain. When the reading on the flow meter stabilized, the flow measurement was recorded in 
+                        L/m (liters per minute).</p></td>
+                    <td class="text-center"><img src="images/IMG_B5F2E3603390-1.jpeg" alt="Testing Flow Rate" width="130" height="150"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h2>Step 6: Cleaning and Repeat</h2></th>
+                    <td><p class="howTo">Then, the whole tank was drained, and the equipment was cleaned with water and wet wipes. 
+                        The water flushed the tank and the pipe out first, then the wet wipes were used to sanitize all surfaces, 
+                        inside and out. Then the equipment was rinsed with water again. This experiment was performed 5 times for 
+                        each condition. Then, one trial was done with each pH condition that had no aluminum in it. This was done to 
+                        compare flow speed between conditions with and without aluminum.</p></td>
+                    <td class="text-center"><img src="images/cleaning.jpg" alt="Cleaning Picture" width="130" height="150"></td>
                 </tr>
             </tbody>
         </table>
