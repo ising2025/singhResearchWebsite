@@ -123,7 +123,7 @@ async function createChart(){
         },
         options: {
             responsive: true,       // Re-size based on screen size
-            sales: {                // Display options for x & y axes
+            scales: {                // Display options for x & y axes
                 x: {
                     title: {
                         display: true,
