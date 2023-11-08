@@ -91,32 +91,32 @@ async function createChart(){
                     label: `Flow Speed for Trial 4 in L/m`,
                     data: data.yFlow4,
                     fill: false,
-                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
-                    borderColor: 'rgba(0, 153, 51, 1)',
+                    backgroundColor: 'rgba(255, 127, 0, 0.2)',
+                    borderColor: 'rgba(255, 127, 0, 1)',
                     borderWidth: 1
                 },
                 {
                     label: `Flow Speed for Trial 5 in L/m`,
                     data: data.yFlow5,
                     fill: false,
-                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
-                    borderColor: 'rgba(0, 153, 51, 1)',
+                    backgroundColor: 'rgba(150, 75, 0, 0.2)',
+                    borderColor: 'rgba(150, 75, 0, 1)',
                     borderWidth: 1
                 },
                 {
                     label: `Mean Flow Speed in L/m`,
                     data: data.yFlowMean,
                     fill: false,
-                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
-                    borderColor: 'rgba(0, 153, 51, 1)',
+                    backgroundColor: 'rgba(127, 0, 255, 0.2)',
+                    borderColor: 'rgba(127, 0, 255, 1)',
                     borderWidth: 1
                 },
                 {
                     label: `Flow Speed for Trial Without Aluminum in L/m`,
                     data: data.yFlowWithout,
                     fill: false,
-                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
-                    borderColor: 'rgba(0, 153, 51, 1)',
+                    backgroundColor: 'rgba(255, 0, 255, 0.2)',
+                    borderColor: 'rgba(255, 0, 255, 1)',
                     borderWidth: 1
                 }
             ]
