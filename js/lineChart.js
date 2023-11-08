@@ -3,14 +3,18 @@
 */
 
 async function getData(){
-    const response = await fetch('../data/global-mean-temp.csv');
+    const response = await fetch('../data/mean-flow-speed.csv');
     const data = await response.text();     // CSV is in TEXT format
     //console.log(data);
 
-    const xYears = []; //x-axis labels = years values
-    const yTemps = []; //y-axis global temp values
-    const yNHtemps= []; //y-axis NH temp values
-    const ySHtemps = []; //y-axis SH temp values
+    const xPH = []; //x-axis labels = pH values
+    const yFlowMean = []; //y-axis mean flow values
+    const yFlow1 = []; //y-axis trial 1 flow values
+    const yFlow2 = []; //y-axis trial 2 flow values
+    const yFlow3 = []; //y-axis trial 3 flow values
+    const yFlow4 = []; //y-axis trial 4 flow values
+    const yFlow5 = []; //y-axis Strial 5 flow values
+    const yFlowWithout = []; //y-axis without aluminum flow values
 
     // \n - new line character
     // split('\n') will separate table into an array of indiv. rows
@@ -21,21 +25,33 @@ async function getData(){
 
     table.forEach(row => {
         const columns = row.split(',');     // split each row on the commas
-        const year = columns[0];            // assign year value
-        xYears.push(year);                  // push year value into xYear array
+        const ph = columns[0];            // assign pH value
+        xPH.push(ph);                  // push pH value into xPH array
         
-        const temp = parseFloat(columns[1]);        //assign temp values
-        yTemps.push(temp + 14);           //push temp values + 14 to store mean temp values
+        const one = parseFloat(columns[1]);        //assign flow values
+        yFlow1.push(one);           //push flow values to store trial 1 flow values
 
-        const nhTemp = parseFloat(columns[2]);        // n. hemi. temp deviation values
-        yNHtemps.push(nhTemp + 14);           //push temp values + 14 to store mean temp values
+        const two = parseFloat(columns[2]);        //assign flow values
+        yFlow2.push(two);           //push flow values to store trial 2 flow values
+        
+        const three = parseFloat(columns[3]);        //assign flow values
+        yFlow3.push(three);           //push flow values to store trial 3 flow values
 
-        const shTemp = parseFloat(columns[3]);        // s. hemi. temp deviation values
-        ySHtemps.push(shTemp + 14);           //push temp values + 14 to store mean temp values
+        const four = parseFloat(columns[4]);        //assign flow values
+        yFlow4.push(four);           //push flow values to store trial 4 flow values
+
+        const five = parseFloat(columns[5]);        //assign flow values
+        yFlow5.push(five);           //push flow values to store trial 5 flow values
+
+        const mean = parseFloat(columns[6]);        //assign flow values
+        yFlowMean.push(mean);           //push flow values to store trial mean flow values
+
+        const without = parseFloat(columns[7]);        //assign flow values
+        yFlowWithout.push(without);           //push flow values to store trial without aluminum flow values
 
         //console.log(year, temp, nhTemp, shTemp);
     });
-    return{xYears, yTemps, yNHtemps, ySHtemps}
+    return{xPH, yFlow1, yFlow2, yFlow3, yFlow4, yFlow5, yFlowMean, yFlowWithout,}
 }
 
 async function createChart(){
@@ -45,27 +61,59 @@ async function createChart(){
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: data.xYears,
+            labels: data.xPH,
             datasets: [
                 {
-                    label: `Combined Global Land-Surface Air and Sea-Surface Water Temperature in ${degSym}C`,
-                    data: data.yTemps,
+                    label: `Flow Speed for Trial 1 in L/m`,
+                    data: data.yFlow1,
                     fill: false,
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 },
                 {
-                    label: `Combined N.H. Land-Surface Air and Sea-Surface Water Temperature in ${degSym}C`,
-                    data: data.yNHtemps,
+                    label: `Flow Speed for Trial 2 in L/m`,
+                    data: data.yFlow2,
                     fill: false,
                     backgroundColor: 'rgba(0, 102, 255, 0.2)',
                     borderColor: 'rgba(0, 102, 255, 1)',
                     borderWidth: 1
                 },
                 {
-                    label: `Combined S.H. Land-Surface Air and Sea-Surface Water Temperature in ${degSym}C`,
-                    data: data.ySHtemps,
+                    label: `Flow Speed for Trial 3 in L/m`,
+                    data: data.yFlow3,
+                    fill: false,
+                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
+                    borderColor: 'rgba(0, 153, 51, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: `Flow Speed for Trial 4 in L/m`,
+                    data: data.yFlow4,
+                    fill: false,
+                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
+                    borderColor: 'rgba(0, 153, 51, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: `Flow Speed for Trial 5 in L/m`,
+                    data: data.yFlow5,
+                    fill: false,
+                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
+                    borderColor: 'rgba(0, 153, 51, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: `Mean Flow Speed in L/m`,
+                    data: data.yFlowMean,
+                    fill: false,
+                    backgroundColor: 'rgba(0, 153, 51, 0.2)',
+                    borderColor: 'rgba(0, 153, 51, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: `Flow Speed for Trial Without Aluminum in L/m`,
+                    data: data.yFlowWithout,
                     fill: false,
                     backgroundColor: 'rgba(0, 153, 51, 0.2)',
                     borderColor: 'rgba(0, 153, 51, 1)',
@@ -79,7 +127,7 @@ async function createChart(){
                 x: {
                     title: {
                         display: true,
-                        text: 'Year',       //x-axis title
+                        text: 'pH',       //x-axis title
                         font: {             // font properties
                             size: 20
                         },
@@ -97,13 +145,13 @@ async function createChart(){
                 y: {
                     title: {
                         display: true,
-                        text: 'Global Mean Temperatures (°C)',
+                        text: 'Flow Speed (L/m)',
                         font: {
                             size: 20
                         },
                     },
                     ticks: {
-                        maxTicksLimit: data.yTemps.length/10,    // limit # of ticks
+                        maxTicksLimit: data.yFlowWithout.length/10,    // limit # of ticks
                         font: {
                             size: 12
                         }
@@ -113,7 +161,7 @@ async function createChart(){
             plugins: {          // Display options
                 title: {
                     display: true,
-                    text: 'Global Mean Temperature vs. Year (since 1880)',
+                    text: 'Water Flow Speed With and Without Aluminum in L/m Based on pH',
                     font: {
                         size: 24
                     },
