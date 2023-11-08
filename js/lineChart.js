@@ -151,7 +151,6 @@ async function createChart(){
                         },
                     },
                     ticks: {
-                        maxTicksLimit: data.yFlowWithout.length/10,    // limit # of ticks
                         font: {
                             size: 12
                         }
