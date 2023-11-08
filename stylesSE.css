@@ -6,8 +6,12 @@
 
 .nbMenuItem {                   /* navbar link text properties */
     font-size: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.nav-item {
+    font-size: 30px;
 }
 
 .footer{
