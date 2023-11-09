@@ -3,7 +3,8 @@
 */
 
 async function getData(){
-    const response = await fetch('../data/mean-flow-speed.csv');
+    const response = await fetch('/singhResearchWebsite/data/mean-flow-speed.csv');     // data directory for GitHub pages
+    //const response = await fetch('../data/mean-flow-speed.csv');                      // data directory for loval dev (Live Server)
     const data = await response.text();     // CSV is in TEXT format
     //console.log(data);
 
