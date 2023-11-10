@@ -124,6 +124,7 @@ async function createChart(){
         },
         options: {
             responsive: true,       // Re-size based on screen size
+            maintainAspectRatio: false, // For responsive charts (keeps original width/height aspect ratio)
             scales: {                // Display options for x & y axes
                 x: {
                     title: {

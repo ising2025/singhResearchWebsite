@@ -66,6 +66,16 @@
     background-color: 	#b5a9bd;
 }
 
+#chart-wrapper{
+    margin: auto;
+    padding: 10px; 
+    height: 40vh;
+    width:  80vw;
+    min-height: 400px;
+    background-color: whitesmoke !important;
+    justify-content: center;
+    align-items: center;  
+}
 
 /* --------------------------------- ID -------------------------- */
 
